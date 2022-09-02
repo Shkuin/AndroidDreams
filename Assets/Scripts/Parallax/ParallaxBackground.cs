@@ -31,11 +31,11 @@ public class ParallaxBackground : MonoBehaviour
             }
         }
     }
-    void Move(float delta)
+    void Move(float iDelta)
     {
         foreach (ParallaxLayer layer in parallaxLayers)
         {
-            layer.Move(delta);
+            layer.Move(iDelta);
         }
     }
 }

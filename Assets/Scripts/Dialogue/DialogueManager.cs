@@ -14,16 +14,12 @@ public class DialogueManager : MonoBehaviour
 {
     private static DialogueManager _instance;
 
-    [Header("Dialogue UI")] [SerializeField]
-    private GameObject _dialoguePanel;
-
+    [Header("Dialogue UI")] [SerializeField] private GameObject _dialoguePanel;
     [SerializeField] private TextMeshProUGUI _dialogueText;
-
     [SerializeField] private GameObject[] _choices;
+
     private TextMeshProUGUI[] _choicesText;
-
     private Story _currentStory;
-
     public bool isDialoguePlaying { get; private set; }
 
     private void Awake()

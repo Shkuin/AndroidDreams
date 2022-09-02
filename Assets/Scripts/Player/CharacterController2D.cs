@@ -16,18 +16,18 @@ public class CharacterController2D : MonoBehaviour
     public float gravityScale = 20.0f;
 
     // components attached to player
-    private BoxCollider2D coll;
-    private Rigidbody2D rb;
+    private BoxCollider2D _coll;
+    private Rigidbody2D _rb;
 
     // other
     private bool isGrounded = false;
 
     private void Awake()
     {
-        coll = GetComponent<BoxCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
+        _coll = GetComponent<BoxCollider2D>();
+        _rb = GetComponent<Rigidbody2D>();
 
-        rb.gravityScale = gravityScale;
+        _rb.gravityScale = gravityScale;
     }
 
     private void FixedUpdate()
@@ -46,8 +46,8 @@ public class CharacterController2D : MonoBehaviour
 
     private void UpdateIsGrounded()
     {
-        Bounds colliderBounds = coll.bounds;
-        float colliderRadius = coll.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
+        Bounds colliderBounds = _coll.bounds;
+        float colliderRadius = _coll.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
         Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);
         // Check if player is grounded
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPos, colliderRadius);
@@ -57,7 +57,7 @@ public class CharacterController2D : MonoBehaviour
         {
             for (int i = 0; i < colliders.Length; i++)
             {
-                if (colliders[i] != coll)
+                if (colliders[i] != _coll)
                 {
                     this.isGrounded = true;
                     break;
@@ -69,7 +69,7 @@ public class CharacterController2D : MonoBehaviour
     private void HandleHorizontalMovement()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        rb.velocity = new Vector2(moveDirection.x * runSpeed, rb.velocity.y);
+        _rb.velocity = new Vector2(moveDirection.x * runSpeed, _rb.velocity.y);
     }
 
     private void HandleJumping()
@@ -78,7 +78,7 @@ public class CharacterController2D : MonoBehaviour
         if (isGrounded && jumpPressed)
         {
             isGrounded = false;
-            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
         }
     }
 

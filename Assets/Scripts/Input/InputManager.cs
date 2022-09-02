@@ -16,20 +16,20 @@ public class InputManager : MonoBehaviour
     private bool _interactPressed = false;
     private bool _submitPressed = false;
 
-    private static InputManager instance;
+    private static InputManager _instance;
 
     private void Awake()
     {
-        if (instance != null)
+        if (_instance != null)
         {
             Debug.LogError("Found more than one Input Manager in the scene.");
         }
-        instance = this;
+        _instance = this;
     }
 
     public static InputManager GetInstance() 
     {
-        return instance;
+        return _instance;
     }
 
     public void MovePressed(InputAction.CallbackContext iContext)
