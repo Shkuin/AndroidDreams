@@ -11,4 +11,5 @@ Which pokemon do you choose?
         
 === chosen(pokemon) ===
 You chose {pokemon}!
+ыдвмстдывмджлвы мджлыв 
 -> END

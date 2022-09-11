@@ -12,19 +12,18 @@ public class CharacterController2D : MonoBehaviour
 
     [Header("Movement Params")]
     public float runSpeed = 6.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravityScale = 20.0f;
+    //public float jumpSpeed = 8.0f;
+    public float gravityScale = 0.0f;
 
     // components attached to player
-    private BoxCollider2D _coll;
+    //private BoxCollider2D _coll;
     private Rigidbody2D _rb;
 
     // other
-    private bool isGrounded = false;
+    //private bool isGrounded = false;
 
     private void Awake()
     {
-        _coll = GetComponent<BoxCollider2D>();
         _rb = GetComponent<Rigidbody2D>();
 
         _rb.gravityScale = gravityScale;
@@ -32,19 +31,15 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().isDialoguePlaying)
-        {
-            return;
-        }
 
-        UpdateIsGrounded();
+        //UpdateIsGrounded();
 
         HandleHorizontalMovement();
 
-        HandleJumping();
+        //HandleJumping();
     }
 
-    private void UpdateIsGrounded()
+    /*private void UpdateIsGrounded()
     {
         Bounds colliderBounds = _coll.bounds;
         float colliderRadius = _coll.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
@@ -64,15 +59,15 @@ public class CharacterController2D : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     private void HandleHorizontalMovement()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        _rb.velocity = new Vector2(moveDirection.x * runSpeed, _rb.velocity.y);
+        _rb.velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
     }
 
-    private void HandleJumping()
+    /*private void HandleJumping()
     {
         bool jumpPressed = InputManager.GetInstance().GetJumpPressed();
         if (isGrounded && jumpPressed)
@@ -80,6 +75,6 @@ public class CharacterController2D : MonoBehaviour
             isGrounded = false;
             _rb.velocity = new Vector2(_rb.velocity.x, jumpSpeed);
         }
-    }
+    }*/
 
 }
