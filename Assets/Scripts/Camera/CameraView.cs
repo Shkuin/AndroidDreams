@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraView : MonoBehaviour
 {
     public SpriteRenderer background;
-    void Start()
+    void Awake()
     {
         Camera.main.orthographicSize = background.bounds.size.y / 2; // for universal landscape size in different mobiles
     }
