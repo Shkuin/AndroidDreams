@@ -26,18 +26,20 @@ public class CarSpawner : MonoBehaviour
         _generatedCarHeight = Math.Abs(_rightMoveCarsObj.transform.localScale.y);
         _mainCameraHeight = Camera.main.orthographicSize;
         _mainCameraWidth = _mainCameraHeight * Screen.width / Screen.height;
-        // ------
+        // тот косяк
         float y = Random.Range(_generatedCarHeight / 5, _mainCameraHeight - _generatedCarHeight / 2);
         _spawnGameObject = Instantiate(_leftMoveCarsObj, new Vector2(_mainCameraWidth, y), Quaternion.identity);
     }
 
     private float SetYCooridinateWithConstr()
     {
+        // массив что бы случайно спавнились машины с разными направлениями движения, положительных больше, что бы машин с одного и с другого потока на
+        // экране было +- одинаково
         int[] signArray = {-1, 1, 1};
         float randY = 0;
         while (CheckConstrainForSpawnPoint(randY))
         {
-            randY = Random.Range(_generatedCarHeight / 5, _mainCameraHeight - _generatedCarHeight / 2) * signArray[Random.Range(0,3)];
+            randY = Random.Range(_generatedCarHeight / 2, _mainCameraHeight - _generatedCarHeight / 2) * signArray[Random.Range(0,3)];
         }
         return randY;
     }
@@ -56,9 +58,9 @@ public class CarSpawner : MonoBehaviour
 
     private bool CheckConstrainForSpawnPoint(float coordinate)
     {
-        return (coordinate >= -_generatedCarHeight / 2 & coordinate <= _generatedCarHeight / 2) |
-               (coordinate <= -_mainCameraHeight + _generatedCarHeight / 2 |
-                coordinate >= _mainCameraHeight - _generatedCarHeight / 2) |
+        return // ограничение что бы машины с разных потоков не спавнились друг в друге
+            (coordinate >= -_generatedCarHeight / 2 & coordinate <= _generatedCarHeight / 2) |
+            // что бы машинки не спавнились слишком близко друг к другу
                (coordinate <= _spawnGameObject.transform.position.y + _mainCarHeight &
                 coordinate >= _spawnGameObject.transform.position.y - _mainCarHeight);
     }

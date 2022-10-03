@@ -6,6 +6,7 @@ public class CarDestroyer : MonoBehaviour
     {
         float mainCameraHeight = Camera.main.orthographicSize;
         float mainCameraWidth = mainCameraHeight * Screen.width / Screen.height;
+        // задаю положение Box collider
         GetComponent<BoxCollider2D>().size = new Vector2(1f, mainCameraHeight * 2);
         GetComponent<BoxCollider2D>().offset = new Vector2(-mainCameraWidth, 0);
     }
