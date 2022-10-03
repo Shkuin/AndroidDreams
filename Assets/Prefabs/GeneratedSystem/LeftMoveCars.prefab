@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2620486505768193423}
   - component: {fileID: 5918761728119381126}
   - component: {fileID: -8210883927980053664}
-  - component: {fileID: -3335145968977169470}
   m_Layer: 0
   m_Name: LeftMoveCars
   m_TagString: GeneratedCars
@@ -148,15 +147,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-3335145968977169470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5704283667602239973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c3b2183ef29fa4d8d3349c88914240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
