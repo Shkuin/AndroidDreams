@@ -25,13 +25,12 @@ public class CharacterController2D : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-
+        
         _rb.gravityScale = gravityScale;
     }
 
     private void FixedUpdate()
     {
-
         //UpdateIsGrounded();
 
         HandleHorizontalMovement();
@@ -65,6 +64,7 @@ public class CharacterController2D : MonoBehaviour
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
         _rb.velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
+       
     }
 
     /*private void HandleJumping()
