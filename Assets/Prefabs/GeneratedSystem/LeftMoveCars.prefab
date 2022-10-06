@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2886980484852842884}
   - component: {fileID: 2620486505768193422}
-  - component: {fileID: 2620486505768193423}
   - component: {fileID: 5918761728119381126}
   - component: {fileID: -8210883927980053664}
+  - component: {fileID: 4073852734000211534}
   m_Layer: 0
   m_Name: LeftMoveCars
   m_TagString: GeneratedCars
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5704283667602239973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.94, y: 6.44, z: 0}
-  m_LocalScale: {x: 0.684722, y: -0.6743529, z: 2.0150425}
+  m_LocalScale: {x: 2, y: 1.5, z: 2.0150425}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2620486505768193423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5704283667602239973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a428c91e42e48c64f835afe4ff42232f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: -5
 --- !u!50 &5918761728119381126
 Rigidbody2D:
   serializedVersion: 4
@@ -147,3 +134,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4073852734000211534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704283667602239973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e64be122f917e409d6adc37571765c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -6
