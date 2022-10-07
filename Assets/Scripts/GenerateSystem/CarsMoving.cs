@@ -8,7 +8,7 @@ public class CarsMoving : MonoBehaviour
     void Update()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        float boostCoeff = 1 + moveDirection.x * 0.4f;
-        transform.Translate(speed * Time.deltaTime * boostCoeff, 0f, 0f);
+        //float boostCoeff = 1 + moveDirection.x * 0.4f;
+        transform.Translate(speed * Time.deltaTime, 0f, 0f);
     }
 }
