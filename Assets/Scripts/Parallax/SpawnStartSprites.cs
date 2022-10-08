@@ -19,25 +19,27 @@ public class SpawnStartSprites : MonoBehaviour
         float cameraHalfWidth = cameraHalfHeight * Camera.main.aspect;
 
         Vector3 position = new Vector3(-cameraHalfWidth, -cameraHalfHeight, 0);
-        for (int i = 0; i < _midCity.Count; ++i)
+        while (position.x < cameraHalfWidth)
         {
-            if (i == 0)
+            for (int i = 0; i < _midCity.Count; ++i)
             {
-                Instantiate(_midCity[0], position, Quaternion.identity);
-            }
-            else
-            {
-                float prevBuildingWidth = _midCity[i - 1].GetComponent<SpriteRenderer>().size.x;
-                float curBuildingWidth = _midCity[i].GetComponent<SpriteRenderer>().size.x;
-                Vector3 updatePosition = position +  new Vector3(prevBuildingWidth + curBuildingWidth / 2, 0, 0);
-
-                if (updatePosition.x >= cameraHalfWidth)
+                if (i == 0)
+                {
+                    Instantiate(_midCity[0], position, Quaternion.identity);
+                }
+                else
+                {
+                    float prevBuildingWidth = _midCity[i - 1].GetComponent<SpriteRenderer>().size.x;
+                    float curBuildingWidth = _midCity[i].GetComponent<SpriteRenderer>().size.x;
+                    position += new Vector3(prevBuildingWidth + curBuildingWidth / 2, 0, 0);
+                    Instantiate(_midCity[i], position, Quaternion.identity);
+                }
+                if (position.x >= cameraHalfWidth)
                     return;
-
-                position = updatePosition;
-                Instantiate(_midCity[i], position, Quaternion.identity);
             }
         }
+
+
     }
 
     void SpawnBackgroundAndBotCity()
