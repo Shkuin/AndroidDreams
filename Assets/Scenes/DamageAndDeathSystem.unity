@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 267218294}
   - component: {fileID: 267218296}
   - component: {fileID: 267218297}
+  - component: {fileID: 267218298}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -466,7 +467,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267218290}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -589,6 +590,18 @@ PolygonCollider2D:
       - {x: 1.15, y: -1.03}
       - {x: 1.35, y: -1.04}
       - {x: 2.1299999, y: -1.04}
+--- !u!114 &267218298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267218290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6858986d16cf807478755e71ee9d01b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _genCars:
-  - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
+  - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
   _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 1
@@ -1284,7 +1297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _genCars:
-  - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
+  - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
   _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 0
