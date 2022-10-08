@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _genCars:
   - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
-  _timeRangeStart: 1
+  _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 1
 --- !u!61 &776608990
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _genCars:
   - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
-  _timeRangeStart: 1
+  _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 3
 --- !u!61 &930302570
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _genCars:
   - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
-  _timeRangeStart: 1
+  _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 2
 --- !u!61 &1017125104
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _genCars:
   - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
-  _timeRangeStart: 1
+  _timeRangeStart: 4
   _timeRangeStop: 6
   _roadIndex: 0
 --- !u!61 &1085695768

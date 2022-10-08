@@ -41,5 +41,6 @@ public class CarsGeneration : MonoBehaviour
         yield return new WaitForSeconds(waitingTime);
         int curCarIndex = Random.Range(0, _genCars.Count - 1);
         Instantiate(_genCars[curCarIndex], new Vector3(GetComponent<BoxCollider2D>().offset.x, GetComponent<BoxCollider2D>().offset.y, 0f), Quaternion.identity);
+        StartCoroutine(Wait());
     }
 }
