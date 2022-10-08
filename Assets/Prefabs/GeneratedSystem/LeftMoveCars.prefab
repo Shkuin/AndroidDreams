@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4073852734000211534}
   m_Layer: 0
   m_Name: LeftMoveCars
-  m_TagString: GeneratedCars
+  m_TagString: GeneratedCarsLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
