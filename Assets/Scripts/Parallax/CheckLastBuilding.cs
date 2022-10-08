@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckLastBuilding : MonoBehaviour
 {
-    public static bool _bCityGenCond = false;
+    public static bool _bCityGenCond = true;
 
     public void OnTriggerExit2D(Collider2D other)
     {

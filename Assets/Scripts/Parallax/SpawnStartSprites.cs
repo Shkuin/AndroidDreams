@@ -9,7 +9,7 @@ public class SpawnStartSprites : MonoBehaviour
     [SerializeField] private List<GameObject> _midCity;
     void Start()
     {
-        SpawnMidCity();
+        //SpawnMidCity();
         SpawnBackgroundAndBotCity();
     }
 
@@ -19,13 +19,15 @@ public class SpawnStartSprites : MonoBehaviour
         float cameraHalfWidth = cameraHalfHeight * Camera.main.aspect;
 
         Vector3 position = new Vector3(-cameraHalfWidth, -cameraHalfHeight, 0);
-        while (position.x < cameraHalfWidth)
+        float xPositionRightBottomCorner = position.x;
+        while (xPositionRightBottomCorner < cameraHalfWidth)
         {
             for (int i = 0; i < _midCity.Count; ++i)
             {
                 if (i == 0)
                 {
                     Instantiate(_midCity[0], position, Quaternion.identity);
+                    xPositionRightBottomCorner += _midCity[0].GetComponent<SpriteRenderer>().size.x;
                 }
                 else
                 {
@@ -34,7 +36,9 @@ public class SpawnStartSprites : MonoBehaviour
                     position += new Vector3(prevBuildingWidth + curBuildingWidth / 2, 0, 0);
                     Instantiate(_midCity[i], position, Quaternion.identity);
                 }
-                if (position.x >= cameraHalfWidth)
+
+                xPositionRightBottomCorner = position.x + _midCity[i].GetComponent<SpriteRenderer>().size.x;
+                if (xPositionRightBottomCorner >= cameraHalfWidth)
                     return;
             }
         }
