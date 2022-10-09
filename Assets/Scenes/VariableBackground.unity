@@ -509,7 +509,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1127,8 +1127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 988205171}
   - component: {fileID: 988205172}
+  - component: {fileID: 988205173}
   m_Layer: 0
-  m_Name: Score
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,6 +1160,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f081a35781a3f6147aa604937a36d1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreField: {fileID: 1574402785}
+  _score: 0
+--- !u!114 &988205173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988205170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6411e31e3e6f10c4882c80d9284c13f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreField: {fileID: 1574402785}
