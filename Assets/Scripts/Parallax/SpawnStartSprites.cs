@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnStartSprites : MonoBehaviour
 {
-    [SerializeField] private List<SpriteRenderer> _backgrounds;
-    [SerializeField] private List<SpriteRenderer> _botCity;
+    [SerializeField] private List<GameObject> _backgrounds;
+    [SerializeField] private List<GameObject> _botCity;
     [SerializeField] private List<GameObject> _midCity;
     void Start()
     {
@@ -48,9 +48,9 @@ public class SpawnStartSprites : MonoBehaviour
 
     void SpawnBackgroundAndBotCity()
     {
-        _backgrounds[0].transform.localPosition = new Vector3(0, 0, 0);
-        _backgrounds[1].transform.localPosition = new Vector3(_backgrounds[0].bounds.size.x, 0, 0);
-        _botCity[0].transform.localPosition = new Vector3(0, 0, 0);
-        _botCity[1].transform.localPosition = new Vector3(_botCity[0].bounds.size.x, 0, 0);
+        Instantiate(_backgrounds[0], new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(_backgrounds[0], new Vector3(_backgrounds[0].GetComponent<SpriteRenderer>().size.x, 0, 0), Quaternion.identity);
+        Instantiate(_botCity[0], new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(_botCity[0], new Vector3(_backgrounds[0].GetComponent<SpriteRenderer>().size.x, 0, 0), Quaternion.identity);
     }
 }

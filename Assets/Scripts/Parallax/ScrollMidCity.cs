@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollMidCity : MonoBehaviour
 {
-    private float speed = -2f;
+    public float speed = -2f;
     void Update()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
