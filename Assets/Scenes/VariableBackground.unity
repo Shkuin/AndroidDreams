@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _genCars:
-  - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
+  - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
   _timeRangeStart: 1
   _timeRangeStop: 4
   _roadIndex: 1
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _genCars:
-  - {fileID: 5704283667602239973, guid: 0a730aeec21549d4faee9e0888f12022, type: 3}
+  - {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
   _timeRangeStart: 1
   _timeRangeStop: 4
   _roadIndex: 0
@@ -1823,9 +1823,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1526018916726672867, guid: 49082b179ab4c4c4f9901c66b0623d61, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1526018916726672870, guid: 49082b179ab4c4c4f9901c66b0623d61, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 1526018916726672870, guid: 49082b179ab4c4c4f9901c66b0623d61, type: 3}
+      propertyPath: m_TagString
+      value: MainCar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49082b179ab4c4c4f9901c66b0623d61, type: 3}

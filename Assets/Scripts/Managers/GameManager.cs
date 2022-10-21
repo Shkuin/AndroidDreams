@@ -88,10 +88,10 @@ public class GameManager : MonoBehaviour
             _background.GetComponent<ScrollBackground>().speed -= 0.1f;
             _botCity.GetComponent<ScrollBackground>().speed -= 0.15f;
 
-            foreach (GameObject fooObj in GameObject.FindGameObjectsWithTag("MidCity"))
-            {
-                fooObj.GetComponent<ScrollMidCity>().speed -= 0.2f;
-            }
+            //foreach (GameObject fooObj in GameObject.FindGameObjectsWithTag("MidCity"))
+            //{
+                //fooObj.GetComponent<ScrollMidCity>().speed -= 0.2f;
+            //}
 
             foreach (var building in _midCity)
                 building.GetComponent<ScrollMidCity>().speed -= 0.2f;

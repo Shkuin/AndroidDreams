@@ -5,10 +5,17 @@ using UnityEngine;
 public class CarsMoving : MonoBehaviour
 {
     public float speed = -3f;
-    void Update()
+    private Rigidbody2D _rigidbody;
+
+    void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    void FixedUpdate()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        //float boostCoeff = 1 + moveDirection.x * 0.4f;
-        transform.Translate(speed * Time.deltaTime, 0f, 0f);
+        float boostCoeff = 10f + moveDirection.x * 4f;
+        _rigidbody.AddForce(new Vector2(speed * boostCoeff, 0f), ForceMode2D.Force);
     }
 }

@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 2886980484852842884}
   - component: {fileID: 2620486505768193422}
   - component: {fileID: 7231500310076465550}
+  - component: {fileID: -4266103076010813096}
+  - component: {fileID: 9022977670427042091}
   - component: {fileID: 1288173728830904849}
   - component: {fileID: -6788042990722216449}
-  m_Layer: 0
+  - component: {fileID: -7705737068167631207}
+  m_Layer: 6
   m_Name: RightMoveCars
   m_TagString: GeneratedCarsRight
   m_Icon: {fileID: 0}
@@ -99,7 +102,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e64be122f917e409d6adc37571765c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -20
+  speed: -7
+--- !u!114 &-4266103076010813096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704283667602239973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b8d9e41d1fba64b967708695d2a75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 40
+  damage: 30
+  speedDamageCoef: 10
+  playerInputForceCoef: 5
+--- !u!114 &9022977670427042091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704283667602239973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b14a16e157a5ba4abdea71070f00f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincible: 0
+  _health: 80
+  invinciblityTime: 0.25
 --- !u!61 &1288173728830904849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,16 +168,45 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5704283667602239973}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_LinearDrag: 5
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!60 &-7705737068167631207
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704283667602239973}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.5, y: 0.5}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.5, y: 0.5}

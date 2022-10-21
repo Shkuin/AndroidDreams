@@ -14,6 +14,7 @@ public class CharacterController2D : MonoBehaviour
     public float runSpeed = 6.0f;
     //public float jumpSpeed = 8.0f;
     public float gravityScale = 0.0f;
+    public float forceCoef;
 
     // components attached to player
     //private BoxCollider2D _coll;
@@ -32,11 +33,10 @@ public class CharacterController2D : MonoBehaviour
     private void FixedUpdate()
     {
         //UpdateIsGrounded();
-
         HandleHorizontalMovement();
-
         //HandleJumping();
     }
+
 
     /*private void UpdateIsGrounded()
     {
@@ -63,9 +63,10 @@ public class CharacterController2D : MonoBehaviour
     private void HandleHorizontalMovement()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        _rb.velocity = new Vector2(moveDirection.x * runSpeed, moveDirection.y * runSpeed);
-       
+        _rb.AddForce(moveDirection * runSpeed * forceCoef, ForceMode2D.Force);
     }
+
+
 
     /*private void HandleJumping()
     {
