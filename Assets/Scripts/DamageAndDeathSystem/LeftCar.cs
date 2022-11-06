@@ -28,9 +28,9 @@ public class LeftCar : MonoBehaviour
             if (collision.gameObject.CompareTag("MainCar"))
             {
                 Vector2 direction = (collider.transform.position - transform.position).normalized;
-                knockbackForce -= mainCarDirection[0] == 0 ? 0 : knockbackForce / playerInputForceCoef;
+                knockbackForce -= mainCarDirection.x == 0 ? 0 : knockbackForce / playerInputForceCoef;
                 Vector2 knockback = direction * knockbackForce * collider.GetComponent<Rigidbody2D>().mass;
-                damage += mainCarDirection[0] == 0 ? 0 : mainCarDirection[0] * speedDamageCoef;
+                damage += mainCarDirection.x * speedDamageCoef;
                 damageable.Damage(damage, knockback);
             }
             else

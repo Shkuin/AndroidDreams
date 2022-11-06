@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 728436482}
+  generatedCar: {fileID: 5704283667602239973, guid: 0e79d1359e8f018429a979b18face4a2, type: 3}
 --- !u!1 &567900275
 GameObject:
   m_ObjectHideFlags: 0
