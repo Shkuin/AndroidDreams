@@ -40,7 +40,8 @@ public class CarsGeneration : MonoBehaviour
         float waitingTime = Random.Range(_timeRangeStart, _timeRangeStop);
         yield return new WaitForSeconds(waitingTime);
         int curCarIndex = Random.Range(0, _genCars.Count - 1);
-        Instantiate(_genCars[curCarIndex], new Vector3(GetComponent<BoxCollider2D>().offset.x, GetComponent<BoxCollider2D>().offset.y, 0f), Quaternion.identity);
+        GameObject gameObject =  Instantiate(_genCars[curCarIndex], new Vector3(GetComponent<BoxCollider2D>().offset.x, GetComponent<BoxCollider2D>().offset.y, 0f), Quaternion.identity);
+        gameObject.SetActive(true);
         StartCoroutine(Wait());
     }
 }

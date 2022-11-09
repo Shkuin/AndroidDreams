@@ -22,12 +22,14 @@ public class CharacterController2D : MonoBehaviour
 
     // other
     //private bool isGrounded = false;
+    private Animator _animator;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        
+       
         _rb.gravityScale = gravityScale;
+        _animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -37,6 +39,11 @@ public class CharacterController2D : MonoBehaviour
         //HandleJumping();
     }
 
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log("jopa");
+    //    _animator.Play("MainCar_Exp", 0, 0.0f);
+    //}
 
     /*private void UpdateIsGrounded()
     {
