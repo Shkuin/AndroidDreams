@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LeftCar : MonoBehaviour
@@ -10,15 +12,11 @@ public class LeftCar : MonoBehaviour
     private float accidentWaveCoef;
     private float damageWaveCoef;
 
-    Animator animator;
-
     void Start()
     {
         accidentWaveCoef = knockbackForce / 4;
         damageWaveCoef = damage / 5;
-        gameObject.SetActive(true);
     }
-
 
     void OnCollisionEnter2D(Collision2D collision)
     {

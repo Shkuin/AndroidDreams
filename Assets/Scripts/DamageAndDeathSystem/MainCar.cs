@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +19,6 @@ public class MainCar : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D collider = collision.collider;
-        collider.gameObject.SetActive(true);
         IDamageable damageable = collider.GetComponent<IDamageable>();
         if (damageable != null)
         {

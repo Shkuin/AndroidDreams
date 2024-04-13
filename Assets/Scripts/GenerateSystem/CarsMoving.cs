@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CarsMoving : MonoBehaviour
@@ -13,7 +15,7 @@ public class CarsMoving : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
-        float boostCoeff = 10f; //+ moveDirection.x * 4f;
+        float boostCoeff = 10f + moveDirection.x * 4f;
         _rigidbody.AddForce(new Vector2(speed * boostCoeff, 0f), ForceMode2D.Force);
     }
 }
